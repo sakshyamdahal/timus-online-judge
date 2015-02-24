@@ -2,6 +2,27 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 
+// TODO: Fix the solution for this input
+/*
+	1234567890
+	10
+	jafgl
+	n
+	ehlnr
+	tyz
+	ru
+	ja
+	iad
+	jadh
+	pty
+	yo
+
+
+
+	ans:ja ehlnr tyz
+
+*/
+
 public class PhoneNumber {
 	
 	
