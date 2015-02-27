@@ -62,7 +62,7 @@ public class LonesomeKnight {
 	
 	public static boolean inBounds(int row, int column)
 	{
-		return ( (row < BOARD_ROW && row > 0 ) && (column < BOARD_COLUMN && column > 0));
+		return ( (row < BOARD_ROW && row >= 0 ) && (column < BOARD_COLUMN && column >= 0));
 	}
 
 }
