@@ -3,62 +3,47 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Hotel {
-
+	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int order = input.nextInt();
 		
+		int count = 1;
 		input.close();
 		
 		ArrayList<LinkedList<Integer>> list = new ArrayList<LinkedList<Integer>>();
-		LinkedList<Integer> temp;
+		LinkedList<Integer> values;
 		
+		// add first half
 		for (int i = 0; i < order; i++)
 		{
-			temp = new LinkedList<Integer>();
-			for (int j = 0; j < order; j++)
+			if (list.size() != i+1)
 			{
-				temp.add( (i * order) + j + 1);
+				values = new LinkedList<Integer>();
+				list.add(values);
+				
 			}
 			
-			list.add(temp);
+			
+			for (int j = 0; j <= i; j++)
+			{
+				list.get(j).addFirst(count++);
+			}
+			
+		}
+		
+		// add second half
+		for (int i = 1; i < order; i++)
+		{
+			list.get(i).addFirst(count++);
+			
+			for (int j = i + 1; j < order; j++)
+			{
+				list.get(j).addFirst(count++);
+			}
 		}
 		
 		printArrayList(list);
-		System.out.println();
-		
-		ArrayList<LinkedList<Integer>> output = new ArrayList<LinkedList<Integer>>();
-		int numElements = 0;
-		temp = new LinkedList<Integer>();
-		for (int i = 0; i < order; i++)
-		{
-			
-			int num = list.get(i).remove();
-			temp.add(num);
-			numElements++;
-			
-			for (int j = i - 1; j >= 0; j--)
-			{
-				if (! list.get(j).isEmpty())
-				{
-					num = list.get(j).remove();
-					temp.add(num);
-					numElements++;
-					
-				}
-			}
-			
-			if (numElements % order == 0)
-			{
-				output.add(temp);
-				temp = new LinkedList<Integer>();
-			}
-			
-			
-			
-		}
-		
-		printArrayList(output);
 
 	}
 	
@@ -69,7 +54,7 @@ public class Hotel {
 			{
 				for (int item : link)
 				{
-					System.out.print(item + " ");
+					System.out.printf("%d ", item);
 				}
 				
 				System.out.println();
