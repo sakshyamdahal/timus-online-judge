@@ -33,7 +33,7 @@ public class Taxi2 {
 			tempCust = customer + (nMid * increase);
 			tempDriver = driver - (nMid * decrease);
 			
-			System.out.printf("customer %d driver %d\n", tempCust, tempDriver);
+			//System.out.printf("customer %d driver %d\n", tempCust, tempDriver);
 			
 			if (tempCust == tempDriver)
 			{
